@@ -190,9 +190,9 @@ namespace Database
 
 		template<typename... S>
 			requires (std::same_as<S, T> and ...)
-		constexpr void addEntries(const S&... s)
+		constexpr void add_entries(const S&... s)
 		{
-			(addEntry(s), ...);
+			(add_entry(s), ...);
 		}
 
 		constexpr std::unordered_map<std::size_t, T> get_entries() const
@@ -254,7 +254,7 @@ namespace Database
 			}
 		}
 
-		constexpr void addEntry(const T& t)
+		constexpr void add_entry(const T& t)
 		{
 			m_entries[m_entry_num++] = t;
 		}
