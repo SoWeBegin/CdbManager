@@ -1,5 +1,5 @@
-#ifndef CDB_READER
-#define CDB_READER
+#ifndef CDB_MANAGER
+#define CDB_MANAGER
 
 #include <unordered_map>
 #include <initializer_list>
@@ -22,12 +22,12 @@ namespace Database
 
 
 	public:
-		constexpr CdbReader()
+		constexpr Cdb()
 		{
 			add_keys_from_struct(T{});
 		}
 
-		constexpr explicit CdbReader(const std::filesystem::path& directory, const std::string& file_name)
+		constexpr explicit Cdb(const std::filesystem::path& directory, const std::string& file_name)
 		{
 			add_keys_from_struct(T{});
 			parse(directory, file_name);
